@@ -7,8 +7,10 @@ const { isUserAuthenticated } = require('../middlewares/auth');
 
 const router = express.Router();
 
-const successLoginUrl = 'http://localhost:3000/dashboard';
-const errorLoginUrl = 'http://localhost:3000/login/error';
+const successLoginUrlGDX = 'http://localhost:3000';
+const successLoginUrlMICard = 'http://localhost:3001';
+const successLoginUrlMISSO = 'http://localhost:3002';
+const errorLoginUrl = 'http://localhost:3000/error';
 
 router.get(
   '/login/google',
@@ -20,10 +22,17 @@ router.get(
   passport.authenticate('google', {
     failureMessage: 'Cannot login to Google, please try again later!',
     failureRedirect: errorLoginUrl,
-    successRedirect: successLoginUrl,
+    // successRedirect: successLoginUrlGDX,
   }),
   (req, res) => {
     console.log('User: ', req.user);
+    if (successLoginUrlGDX) {
+      res.redirect(`${successLoginUrlGDX}/welcome`);
+    } else if (successLoginUrlMICard) {
+      res.redirect(`${successLoginUrlMICard}/welcome`);
+    } else if (successLoginUrlMISSO) {
+      res.redirect(`${successLoginUrlMISSO}/welcome`);
+    }
     res.send('Thank you for signing in to MISSO!');
   }
 );
