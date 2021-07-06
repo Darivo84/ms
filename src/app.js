@@ -20,9 +20,9 @@ const api = require('./api');
 const app = express();
 
 const whitelist = [
-  'http://localhost:3000',
-  'http://localhost:3001',
-  'http://localhost:3002',
+  'https://darivo84.github.io/gdxwebapp',
+  'https://darivo84.github.io/micardwebapp',
+  'https://darivo84.github.io/missowebapp',
 ];
 const corsOptions = {
   origin: function (origin, callback) {

@@ -7,9 +7,9 @@ const { isUserAuthenticated } = require('../middlewares/auth');
 
 const router = express.Router();
 
-const successLoginUrlGDX = 'http://localhost:3000';
-const successLoginUrlMICard = 'http://localhost:3001';
-const successLoginUrlMISSO = 'http://localhost:3002';
+const successLoginUrlGDX = 'https://darivo84.github.io/gdxwebapp';
+const successLoginUrlMICard = 'https://darivo84.github.io/micardwebapp';
+const successLoginUrlMISSO = 'https://darivo84.github.io/missowebapp';
 const errorLoginUrl = 'http://localhost:3000/error';
 
 router.get(
