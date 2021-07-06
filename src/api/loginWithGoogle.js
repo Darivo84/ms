@@ -26,11 +26,11 @@ router.get(
   }),
   (req, res) => {
     console.log('User: ', req.user);
-    if (successLoginUrlGDX) {
+    if (successLoginUrlGDX === true) {
       res.redirect(`${successLoginUrlGDX}/welcome`);
-    } else if (successLoginUrlMICard) {
+    } else if (successLoginUrlMICard === true) {
       res.redirect(`${successLoginUrlMICard}/welcome`);
-    } else if (successLoginUrlMISSO) {
+    } else if (successLoginUrlMISSO === true) {
       res.redirect(`${successLoginUrlMISSO}/welcome`);
     }
     res.send('Thank you for signing in to MISSO!');

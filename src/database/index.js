@@ -6,7 +6,7 @@ const sequelize = new Sequelize(
   process.env.DB_USER,
   process.env.DB_PASS,
   {
-    host: 'localhost',
+    host: 'misso.cumfk9skmawq.eu-west-2.rds.amazonaws.com',
     dialect: 'mysql',
   }
 );
