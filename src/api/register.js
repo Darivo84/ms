@@ -2,7 +2,7 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable consistent-return */
 const express = require('express');
-const User = require('../models/user');
+const User = require('../../models');
 
 const router = express.Router();
 

@@ -1,3 +1,5 @@
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 
@@ -7,9 +9,10 @@ const { isUserAuthenticated } = require('../middlewares/auth');
 
 const router = express.Router();
 
-const successLoginUrlGDX = 'https://darivo84.github.io/gdxwebapp';
-const successLoginUrlMICard = 'https://darivo84.github.io/micardwebapp';
-const successLoginUrlMISSO = 'https://darivo84.github.io/missowebapp';
+const successLoginUrlGDX = 'https://darivo84.github.io/gdxwebapp/#/welcome';
+const successLoginUrlMICard =
+  'https://darivo84.github.io/micardwebapp/#/welcome';
+const successLoginUrlMISSO = 'https://darivo84.github.io/missowebapp/#/welcome';
 const errorLoginUrl = 'http://localhost:3000/error';
 
 router.get(
@@ -22,7 +25,7 @@ router.get(
   passport.authenticate('google', {
     failureMessage: 'Cannot login to Google, please try again later!',
     failureRedirect: errorLoginUrl,
-    // successRedirect: successLoginUrlGDX,
+    // successRedirect: successLoginUrl,
   }),
   (req, res) => {
     console.log('User: ', req.user);

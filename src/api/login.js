@@ -4,18 +4,18 @@
 /* eslint-disable consistent-return */
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const user = require('../../models');
 
 const router = express.Router();
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
-  const userWithEmail = await User.findOne({ where: { email } }).catch(
-    (err) => {
+  const userWithEmail = await user
+    .findOne({ where: { email } })
+    .catch((err) => {
       console.log('Error: ', err);
-    }
-  );
+    });
 
   if (!userWithEmail)
     return res

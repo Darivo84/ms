@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable func-names */
 /* eslint-disable object-shorthand */
 const express = require('express');
@@ -11,13 +12,15 @@ const cookieSession = require('cookie-session');
 require('./auth/passport');
 require('./auth/passportGoogleSSO');
 
-require('./models/user');
+// require('./models/user');
 
 const passport = require('passport');
 const middlewares = require('./middlewares');
 const api = require('./api');
 
 const app = express();
+
+const { sequelize } = require('../models');
 
 const whitelist = [
   'https://darivo84.github.io/gdxwebapp',
